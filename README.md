@@ -5,18 +5,15 @@ This is a memcache client library for Go.
 ```sh
 $ go get github.com/ssuareza/memcache
 ```
-After this command memcache is ready to use. Its source will be in:
-
-$GOPATH/src/github.com/ssuareza/memcache
 
 # Example
 ```go
 import (
-        "github.com/ssuareza/memcache"
+    "github.com/ssuareza/memcache"
 )
 
 func main() {
-     client, _ := memcache.New("localhost:11211")
+    client, _ := memcache.New("localhost:11211")
 
     // set
     item := &memcache.Item{Key: "dog", Value: []byte("dago")}
