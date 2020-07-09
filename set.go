@@ -5,7 +5,7 @@ import (
 	"fmt"
 )
 
-// Set writes the given item
+// Set writes the given item.
 func (c *Client) Set(item *Item) error {
 	// send set to socket
 	fmt.Fprintf(c.Conn, "add %s 0 %v %v\r\n%s\r\n", item.Key, defaultExpiration, len(item.Value), item.Value)

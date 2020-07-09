@@ -6,7 +6,7 @@ import (
 	"strings"
 )
 
-// Get gets the item for the given key
+// Get gets the item for the given key.
 func (c *Client) Get(key string) (*Item, error) {
 	var i Item
 
@@ -31,7 +31,7 @@ func (c *Client) Get(key string) (*Item, error) {
 	return &i, nil
 }
 
-// GetMulti is a batch version of Get
+// GetMulti is a batch version of Get.
 func (c *Client) GetMulti(keys []string) (map[string]*Item, error) {
 	// create a map to save all values
 	m := make(map[string]*Item)

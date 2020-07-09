@@ -22,7 +22,7 @@ type Item struct {
 	Value []byte
 }
 
-// New returns a memcache client
+// New returns a memcache client.
 func New(addr string) (*Client, error) {
 	d := net.Dialer{Timeout: defaultTimeout}
 	conn, err := d.Dial("tcp", addr)
