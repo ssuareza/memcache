@@ -14,6 +14,11 @@ func main() {
 	}
 	defer client.Conn.Close()
 
+	// flush
+	if err := client.FlushAll(); err != nil {
+		log.Fatal(err)
+	}
+
 	// set and get
 	item := &memcache.Item{Key: "dog", Value: []byte("dago")}
 	err = client.Set(item)

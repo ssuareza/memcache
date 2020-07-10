@@ -49,7 +49,6 @@ func (c *Client) GetMulti(keys []string) (map[string]*Item, error) {
 				break
 			}
 			if strings.HasPrefix(string(line), "VALUE") {
-				i.Key = string(strings.Fields(string(line))[1])
 				continue
 			}
 			i.Key = key
