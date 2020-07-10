@@ -3,12 +3,29 @@ A simple API where you can insert values in in memcached. Files supported.
 
 **Note**: the API will be running at port 8090.
 
+# Build
+To build the API run:
+```sh
+make build
+````
+This will leave the binaries in the "build" directory.
+
+## Start
+Just run the binary specific for your platform (mac or linux). Example:
+```sh
+build/mapi-darwin-amd64
+```
+**Note**: The application will be running at port 8090.
+
+## Dependencies
+The API interact with a **memcached** server running at "localhost:11211". Make sure to have it before using it :-)
+
 # Usage
 
 ## Set key
 ```sh
 $ curl -s -X POST http://localhost:8090/set/mykey?value=random
-stored
+STORED
 ```
 
 ## Set key with file
