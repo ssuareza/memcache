@@ -26,5 +26,5 @@ dago
 ## Flush cache
 ```sh
 $ curl -s -X POST http://localhost:8090/flush
-STORED
+FLUSHED
 ```
