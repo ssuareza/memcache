@@ -12,7 +12,10 @@ stored
 ```
 
 ## Set key with file
+```sh
 $ curl -s -X POST -F "file=@file.dat" http://localhost:8090/set/mykey
+STORED
+```
 
 ## Get key
 ```sh
@@ -23,4 +26,5 @@ dago
 ## Flush cache
 ```sh
 $ curl -s -X POST http://localhost:8090/flush
+STORED
 ```
