@@ -18,7 +18,7 @@ func Get(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	item, err := client.Get(vars["key"])
+	item, err := client.Get(vars["id"])
 	if err != nil {
 		fmt.Println(err)
 		return

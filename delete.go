@@ -5,15 +5,15 @@ import (
 	"fmt"
 )
 
-// FlushAll flush all the contents in memcache.
-func (c *Client) FlushAll() error {
-	// send flush_all to socket
-	fmt.Fprintf(c.Conn, "flush_all\r\n")
+// Delete deletes the given key.
+func (c *Client) Delete(key string) error {
+	// send set to socket
+	fmt.Fprintf(c.Conn, "delete %s\r\n", key)
 
 	// get response
 	scanner := bufio.NewScanner(c.Conn)
 	if scanner.Scan() {
-		if scanner.Text() == "OK" {
+		if scanner.Text() == "DELETED" {
 			return nil
 		}
 		return fmt.Errorf(scanner.Text())

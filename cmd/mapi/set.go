@@ -13,12 +13,12 @@ import (
 
 // Set sets a new memcache key/value.
 func Set(w http.ResponseWriter, r *http.Request) {
-	// vars from uri
+	// get vars from request
 	vars := mux.Vars(r)
-	key := vars["key"]
-	value := vars["value"]
+	key := vars["id"]
+	value := r.FormValue("value")
 
-	if len(r.FormValue("value")) == 0 {
+	if len(value) == 0 {
 		fmt.Fprintf(w, "you should specify \"value\"\n")
 		return
 	}
@@ -44,7 +44,7 @@ func Set(w http.ResponseWriter, r *http.Request) {
 func SetFile(w http.ResponseWriter, r *http.Request) {
 	// vars from uri
 	vars := mux.Vars(r)
-	key := vars["key"]
+	key := vars["id"]
 
 	// retrieve file
 	file, err := ReceiveFileToStruct(r)
