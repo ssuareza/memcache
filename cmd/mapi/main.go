@@ -20,10 +20,10 @@ func main() {
 	router.HandleFunc("/flush", Flush).Methods("POST")
 	router.HandleFunc("/key/{id}", Get).Methods("GET")
 	router.HandleFunc("/key/{id}", Set).Methods("POST")
-	router.HandleFunc("/key/{id}", Update).Methods("PUT")
+	router.HandleFunc("/key/{id}", Replace).Methods("PUT")
 	router.HandleFunc("/key/{id}", Delete).Methods("DELETE")
 	router.HandleFunc("/file/{id}", SetFile).Methods("POST")
-	router.HandleFunc("/file/{id}", UpdateFile).Methods("PUT")
+	router.HandleFunc("/file/{id}", ReplaceFile).Methods("PUT")
 
 	fmt.Println("starting")
 	log.Fatal(http.ListenAndServe(port, router))
